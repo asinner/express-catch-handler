@@ -6,6 +6,9 @@
   "scripts": {
     "build": "tsc"
   },
+  "repository": {
+    "url": "https://github.com/asinner/express-catch-handler"
+  },
   "author": "Andrew Sinner <andrewsinner@gmail.com>",
   "license": "MIT",
   "devDependencies": {
