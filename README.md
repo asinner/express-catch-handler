@@ -27,11 +27,11 @@ You can customize what error is thrown in the event that your code throws
 literal `undefined`:
 
 ```ts
-import { setDefault } from 'express-catch-handler'
+import withCatch, { setDefault } from 'express-catch-handler'
 
 setDefault(new Error('foobar'))
 
-app.get('/', withCatch(req, res) => {
+app.get('/', withCatch((req, res) => {
     throw undefined
-})
+}))
 ```
