@@ -21,7 +21,13 @@ export function setDefault(err: Error) {
 export default function withCatch(handler: RequestHandler): RequestHandler {
     return async (req, res, next) => {
         try {
-            await handler(req, res, next)
+            await handler(req, res, next).catch((err: any) => {
+                if (err === undefined) {
+                    next(_unknown)
+                } else {
+                    next(err)
+                }
+            })
             next()
         } catch (err) {
             if (err === undefined) {
